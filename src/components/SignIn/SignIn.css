@@ -1,0 +1,36 @@
+.form {
+  box-shadow: 0 0 8px 4px rgb(0 0 0 / 20%);
+  background: linear-gradient(270deg, #071b52 0% , teal 100%);
+  z-index: 0;
+  opacity: 0.95;
+  border-radius: 15px;
+  margin-top: 80px;
+}
+
+legend {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 440px) {
+  .form {
+    margin-top: 40px;
+  }
+
+}
+
+.signin-reg-container, .sign-in-button, .button-container{
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.signin-reg {
+  font-size: .875rem;
+  opacity: 1;
+  transition: opacity .15s ease-in;
+  cursor: pointer;
+}
+
+.signin-reg:hover {
+  opacity: .5;
+  transition: opacity .15s ease-in;
+}

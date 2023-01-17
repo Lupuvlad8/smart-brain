@@ -1,0 +1,106 @@
+.form-container {
+  max-width: 60%;
+  width: 32rem;
+  min-width: 25rem;
+  box-shadow: 0 0 8px 4px rgb(0 0 0 / 20%);
+  background: linear-gradient(270deg, #071b52 0% , teal 100%);
+  z-index: 0;
+  opacity: 0.95;
+  border-radius: 15px;
+  margin-top: 80px;
+}
+
+.main {
+  padding: 2rem;
+  color: black;
+}
+
+.measure {
+  max-width: 30em;
+}
+
+#sign-up {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.form-title {
+  font-size: 3rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.field-container{
+  margin-top: 1rem;
+}
+
+.label {
+  font-size: .875rem;
+  line-height: 1.5;
+  font-weight: 600;
+  display: block;
+}
+
+.form-input {
+  padding: 0.2rem 0.5rem;
+  background-color: transparent;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.form-input:hover, .form-input:focus {
+  background-color: black;
+  color: white;
+}
+
+.form-button {
+  font-size: .875rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  display: inline-block;
+  border-color: #000;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transform: translateZ( 0 );
+  transition: transform .25s ease-out;
+}
+
+.form-button:hover, .form-button:focus {
+  transform: scale( 1.05 );
+  outline: none;
+}
+
+.form-button:active {
+  transform: scale( .90 );
+  outline: none;
+}
+
+legend {
+  font-weight: 700;
+}
+
+
+@media screen and (max-width: 440px) {
+  .form-container {
+      max-width: 100%;
+      width: 100%;
+      min-width: 0;
+  }
+}
+
+@media screen and (max-height: 710px) {
+  .form-container {
+    margin-top: 40px;
+  }
+}
