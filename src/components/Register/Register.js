@@ -1,49 +1,46 @@
-import React from 'react';
+import React from "react";
 import "./Register.css";
 
 class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
-      name: ''
-    }
+      email: "",
+      password: "",
+      name: "",
+    };
   }
 
   onNameChange = (event) => {
-    this.setState({name: event.target.value})
-  }
+    this.setState({ name: event.target.value });
+  };
 
   onEmailChange = (event) => {
-    this.setState({email: event.target.value})
-  }
+    this.setState({ email: event.target.value });
+  };
 
   onPasswordChange = (event) => {
-    this.setState({password: event.target.value})
-  }
+    this.setState({ password: event.target.value });
+  };
 
   onSubmitSignIn = () => {
-    fetch('https://smart-brain.up.railway.app/register', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
+    fetch("https://smart-brain.up.railway.app/register", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
-        name: this.state.name
-      })
+        name: this.state.name,
+      }),
     })
-      .then(response => response.json())
-      .then(user => {
+      .then((response) => response.json())
+      .then((user) => {
         if (user.id) {
           this.props.loadUser(user);
-          this.props.onRouteChange('home');
+          this.props.onRouteChange("home");
         }
-        else {
-          alert('Please fill in all the fields');
-        }
-      })
-  }
+      });
+  };
 
   render() {
     return (
@@ -53,9 +50,11 @@ class Register extends React.Component {
             <fieldset id="sign-up">
               <legend className="form-title">Register</legend>
               <div className="field-container">
-                <label className="label" htmlFor="name">Name</label>
+                <label className="label" htmlFor="name">
+                  Name
+                </label>
                 <input
-                  autoComplete='off'
+                  autoComplete="off"
                   className="form-input"
                   type="text"
                   name="name"
@@ -64,9 +63,11 @@ class Register extends React.Component {
                 />
               </div>
               <div className="field-container">
-                <label className="label" htmlFor="email-address">Email</label>
+                <label className="label" htmlFor="email-address">
+                  Email
+                </label>
                 <input
-                  autoComplete='off'
+                  autoComplete="off"
                   className="form-input"
                   type="email"
                   name="email-address"
@@ -75,9 +76,11 @@ class Register extends React.Component {
                 />
               </div>
               <div className="field-container">
-                <label className="label" htmlFor="password">Password</label>
+                <label className="label" htmlFor="password">
+                  Password
+                </label>
                 <input
-                  autoComplete='off'
+                  autoComplete="off"
                   className="form-input"
                   type="password"
                   name="password"

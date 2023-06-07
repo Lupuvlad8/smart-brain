@@ -1,56 +1,55 @@
-import React from 'react';
-import './SignIn.css';
+import React from "react";
+import "./SignIn.css";
 
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      signInEmail: '',
-      signInPassword: ''
-    }
+      signInEmail: "",
+      signInPassword: "",
+    };
   }
 
   onEmailChange = (event) => {
-    this.setState({signInEmail: event.target.value})
-  }
+    this.setState({ signInEmail: event.target.value });
+  };
 
   onPasswordChange = (event) => {
-    this.setState({signInPassword: event.target.value})
-  }
+    this.setState({ signInPassword: event.target.value });
+  };
 
   onSubmitSignIn = () => {
-    fetch('https://smart-brain.up.railway.app/signin', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
+    fetch("https://smart-brain.up.railway.app/signin", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: this.state.signInEmail,
-        password: this.state.signInPassword
-      })
+        password: this.state.signInPassword,
+      }),
     })
-      .then(response => response.json())
-      .then(user => {
+      .then((response) => response.json())
+      .then((user) => {
         if (user.id) {
           this.props.loadUser(user);
-          this.props.onRouteChange('home');
+          this.props.onRouteChange("home");
         }
-        else {
-          alert('Please insert valid credentials');
-        }
-      })
-  }
+      });
+  };
 
   render() {
     const { onRouteChange } = this.props;
     return (
-      <article autoComplete='off' className="form-container center">
+      <article autoComplete="off" className="form-container center">
         <main className="main">
           <div className="measure">
             <fieldset id="sign-up">
               <legend className="form-title">Sign In</legend>
               <div className="field-container">
-                <label className="label" htmlFor="email-address">Email</label>
+                <label className="label" htmlFor="email-address">
+                  Email
+                </label>
                 <input
-                  autoComplete='off'
+                  autoComplete="off"
                   className="form-input"
                   type="email"
                   name="email-address"
@@ -59,9 +58,11 @@ class SignIn extends React.Component {
                 />
               </div>
               <div className="field-container">
-                <label className="label" htmlFor="password">Password</label>
+                <label className="label" htmlFor="password">
+                  Password
+                </label>
                 <input
-                  autoComplete='off'
+                  autoComplete="off"
                   className="form-input"
                   type="password"
                   name="password"
@@ -79,7 +80,12 @@ class SignIn extends React.Component {
               />
             </div>
             <div className="signin-reg-container">
-              <span  onClick={() => onRouteChange('register')} className="signin-reg">Register</span>
+              <span
+                onClick={() => onRouteChange("register")}
+                className="signin-reg"
+              >
+                Register
+              </span>
             </div>
           </div>
         </main>
